@@ -9,7 +9,7 @@ namespace LojaNatal.Model
 
         public string Titulo { get; set; }
         public string Nome { get; set; }
-        public string Preco { get; set; }
+        public double Preco { get; set; }
         public string Imagem { get; set; }
         public string Quantidade { get; set; }
     }

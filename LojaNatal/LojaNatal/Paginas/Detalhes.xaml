@@ -18,7 +18,7 @@
                             </Label.GestureRecognizers>
                         </Label>
                         <Button Grid.Column="0" Grid.ColumnSpan="2" ImageSource="Bag" BackgroundColor="#90dbd5" Margin="0,15,15,0" VerticalOptions="Start" HorizontalOptions="End" HeightRequest="50" WidthRequest="50" CornerRadius="25"/>
-                        <Button Grid.Column="1" VerticalOptions="Start" BackgroundColor="White" HorizontalOptions="End" Margin="0,9,15,0" HeightRequest="{OnPlatform iOS='16', Android='26'}" WidthRequest="{OnPlatform iOS='16', Android='26'}" CornerRadius="{OnPlatform iOS='8', Android='13'}" Text="1" FontAttributes="Bold" FontSize="7" TextColor="Red" />
+                        <Button Grid.Column="1" VerticalOptions="Start" BackgroundColor="White" HorizontalOptions="End" Margin="0,9,15,0" HeightRequest="{OnPlatform iOS='16', Android='26'}" WidthRequest="{OnPlatform iOS='16', Android='26'}" CornerRadius="{OnPlatform iOS='8', Android='13'}" Text="{Binding QtdItens}" FontAttributes="Bold" FontSize="7" TextColor="Red" />
                     </Grid>
                 </PanCake:PancakeView>
             </StackLayout>

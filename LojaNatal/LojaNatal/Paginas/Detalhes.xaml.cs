@@ -14,12 +14,13 @@ namespace LojaNatal.Paginas
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Detalhes : ContentPage
     {
+        Item item;
         public Detalhes(Item item)
         {
+            this.item = item;
             InitializeComponent();
-
-            BindingContext = item;
             DefinirCor(item);
+            BindingContext = new ViewModel.DetalhesViewModel(item);
         }
         private void Voltar(object sender,EventArgs args)
         {
@@ -27,17 +28,18 @@ namespace LojaNatal.Paginas
         }
         private void DefinirCor(Item item)
         {
-            if (item.Imagem.Equals("Detail1")){
+            if (item.Imagem.Equals("Detail1.png")){
                 GridHead.BackgroundColor = Color.FromHex("#FFEBE4");
-            }else if (item.Imagem.Equals("Detail2")){
+            }else if (item.Imagem.Equals("Detail2.png")){
                 GridHead.BackgroundColor = Color.FromHex("#FFF8DC");
-            }else if (item.Imagem.Equals("Detail3")){
+            }else if (item.Imagem.Equals("Detail3.png")){
                 GridHead.BackgroundColor = Color.FromHex("#DAF2F9");
             }
         }
-        private void AddCart(object sender,EventArgs args)
+        private void AddCart(object sender, EventArgs args)
         {
             Dados.QtdItens++;
+            Dados.PrecoTotal += item.Preco;
         }
     }
 }

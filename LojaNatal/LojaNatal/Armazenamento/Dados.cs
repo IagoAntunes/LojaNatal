@@ -7,5 +7,6 @@ namespace LojaNatal.Armazenamento
     public class Dados
     {
         public static int QtdItens { get; set; }
+        public static double PrecoTotal { get; set; }
     }
 }
