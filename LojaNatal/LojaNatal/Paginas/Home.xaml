@@ -10,7 +10,7 @@
             <pancake:PancakeView Grid.Row="0" CornerRadius="0,0,110,0" HeightRequest="180">
                 <Grid ColumnDefinitions="*,Auto" RowDefinitions="Auto,Auto"  BackgroundColor="#49c175" Padding="25,55,25,0" HorizontalOptions="FillAndExpand">
                     <Label Grid.Column="0" Grid.Row="0" Text="SHOPPING CART" CharacterSpacing="3" HorizontalTextAlignment="Center" FontSize="13" TextColor="White"/>
-                    <Label Grid.Column="0" Grid.Row="1" Text="3 Items Added" CharacterSpacing="3" Padding="0,20,0,0" FontSize="23" FontAttributes="Bold" HorizontalTextAlignment="Center" TextColor="White"/>
+                    <Label Grid.Column="0" Grid.Row="1" Text="{Binding ItensAdicionados}" CharacterSpacing="3" Padding="0,20,0,0" FontSize="20" FontAttributes="Bold" HorizontalTextAlignment="Center" TextColor="White"/>
                     <Button Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" VerticalOptions="Start" ImageSource="Bag" BackgroundColor="#2da050" HorizontalOptions="End" HeightRequest="60" WidthRequest="60" CornerRadius="20"/>
                     <Button Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" VerticalOptions="Start" BackgroundColor="White" HorizontalOptions="End" HeightRequest="{OnPlatform iOS='16', Android='40'}" WidthRequest="{OnPlatform iOS='16',
                         Android='35'}" CornerRadius="{OnPlatform iOS='8', Android='13'}" Text="{Binding QtdItens}" FontAttributes="Bold" 
@@ -32,7 +32,7 @@
                                 </pancake:PancakeView>
                                 <Label Grid.Row="0" Grid.Column="1" Text="{Binding Titulo}" Grid.ColumnSpan="2" FontSize="13" Padding="10,10,0,0" TextColor="#9a9bab" FontAttributes="Bold"/>
                                 <Label Grid.Row="1" Grid.Column="1" Text="{Binding Nome}" MaxLines="3" Padding="10,0,0,10" FontSize="17" FontAttributes="Bold"/>
-                                <Label Grid.Row="2" Grid.Column="1" Text="{Binding Preco}" Padding="10,0,0,0" FontAttributes="Bold" FontSize="20" TextColor="#49c175"/>
+                                <Label Grid.Row="2" Grid.Column="1" x:Name="lblPreco" Text="{Binding Preco}" Padding="10,0,0,0" FontAttributes="Bold" FontSize="20" TextColor="#49c175"/>
                                 <Button Grid.Row="1" Grid.Column="3" FontSize="20" VerticalOptions="CenterAndExpand" Margin="0,0,10,0" BackgroundColor="#0c0e34" Text="+" FontAttributes="Bold"  TextColor="White" HorizontalOptions="End"
                                             HeightRequest="40" WidthRequest="40" CornerRadius="20" Clicked="GoDetalhe"/>
                             </Grid>

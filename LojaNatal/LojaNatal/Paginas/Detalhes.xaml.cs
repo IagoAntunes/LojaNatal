@@ -39,7 +39,7 @@ namespace LojaNatal.Paginas
         private void AddCart(object sender, EventArgs args)
         {
             Dados.QtdItens++;
-            Dados.PrecoTotal += item.Preco;
+            Dados.PrecoTotal += double.Parse(item.Preco.Substring(2,item.Preco.Length-2));
         }
     }
 }

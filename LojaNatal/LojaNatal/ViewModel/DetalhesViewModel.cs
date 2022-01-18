@@ -16,8 +16,8 @@ namespace LojaNatal.ViewModel
         public string Titulo { get { return _Titulo; } set { _Titulo = value;OnPropertyChanged("Titulo"); } }
         private string _Nome;
         public string Nome { get { return _Nome; } set { _Nome = value;OnPropertyChanged("Nome"); } }
-        private double _Preco;
-        public double Preco { get { return _Preco;} set { _Preco = value;OnPropertyChanged("Preco"); } }
+        private string _Preco;
+        public string Preco { get { return _Preco;} set { _Preco = value;OnPropertyChanged("Preco"); } }
         private string _Quantidade;
         public string Quantidade {get { return _Quantidade; } set { _Quantidade = value;OnPropertyChanged("Quantidade"); } }
         private int _QtdItens;
@@ -28,7 +28,7 @@ namespace LojaNatal.ViewModel
         {
             this.Titulo = item.Titulo;
             this.Nome = item.Nome;
-            this.Preco = item.Preco;
+            this.Preco = item.Preco.Replace(",",".");
             this.Imagem = item.Imagem;
             this.Quantidade = item.Quantidade;
 
