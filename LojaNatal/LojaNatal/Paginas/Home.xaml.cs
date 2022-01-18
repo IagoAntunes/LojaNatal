@@ -14,10 +14,11 @@ namespace LojaNatal.Paginas
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Home : ContentPage
     {
+
         public Home()
         {
             InitializeComponent();
-
+            
             BindingContext = new ViewModel.InicioViewModel();
         }
         private void GoDetalhe(object sender,EventArgs args)
@@ -28,6 +29,7 @@ namespace LojaNatal.Paginas
             //Navigation.PushAsync(new Paginas.Detalhes(vaga));
 
             App.Current.MainPage = new Paginas.Detalhes(vaga);
+
         }
     }
 }

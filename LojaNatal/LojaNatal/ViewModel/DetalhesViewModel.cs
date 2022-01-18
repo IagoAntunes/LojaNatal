@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace LojaNatal.ViewModel
@@ -23,7 +24,8 @@ namespace LojaNatal.ViewModel
         private int _QtdItens;
         public int QtdItens { get { return _QtdItens; }set { _QtdItens = value;OnPropertyChanged("QtdItens"); } }
 
-        public Command AdicionarCarrinho;
+        public Command AdicionarCarrinho { get; set; }
+        public Item item;
         public DetalhesViewModel(Item item)
         {
             this.Titulo = item.Titulo;
@@ -33,6 +35,16 @@ namespace LojaNatal.ViewModel
             this.Quantidade = item.Quantidade;
 
             this.QtdItens = Dados.QtdItens;
+
+            this.item = item;
+            AdicionarCarrinho = new Command(Adicionar);
+        }
+
+        public void Adicionar()
+        {
+            Dados.QtdItens++;
+            Dados.PrecoTotal += double.Parse(item.Preco.Substring(2, item.Preco.Length - 2));
+            OnPropertyChanged("QtdItens");
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

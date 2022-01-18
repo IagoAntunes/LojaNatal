@@ -36,10 +36,6 @@ namespace LojaNatal.Paginas
                 GridHead.BackgroundColor = Color.FromHex("#DAF2F9");
             }
         }
-        private void AddCart(object sender, EventArgs args)
-        {
-            Dados.QtdItens++;
-            Dados.PrecoTotal += double.Parse(item.Preco.Substring(2,item.Preco.Length-2));
-        }
+
     }
 }
